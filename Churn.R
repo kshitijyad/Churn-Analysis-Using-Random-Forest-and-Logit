@@ -150,7 +150,7 @@ ggplot()+ geom_map(data=us, map=us,aes(x=long, y=lat, map_id=region),
                     fill="#ffffff", color="#ffffff", size=0.15)+
   geom_map(data=totalchurn, map=us,aes(fill=x, map_id=Category),
                     color="#ffffff", size=0.15)+
-  scale_fill_continuous(low='thistle2', high='darkred',guide='colorbar')+
+  scale_fill_continuous(low='lightblue', high='DarkRed',guide='colorbar')+
   labs(x=NULL, y=NULL)+
   coord_map("albers", lat0 = 39, lat1 = 45)+
   theme(panel.border = element_blank())+
@@ -181,7 +181,7 @@ x <- subset(churnTrain, , -c(state,allarea, area_code, international_plan, voice
 m <- x[,-c(17,18,19,20,21)]
 #Checking for correlation
 t <- cor(m)
-corrplot(t,method = "color")
+corrplot(t,method = "circle")
 #Removing COrrelated Variables
 x <- x[,-c(3,6,9,12)]
 #Running Logit Model
